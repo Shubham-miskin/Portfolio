@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #FFFFFF;          /* White background */
+      --primary: #222222;     /* Dark Gray */
+      --secondary: #7B7B7B;   /* Medium Gray */
+      --tertiary: #F8F8F8;    /* Light Gray */
+      --text: #222222;        /* Main text */
+      --muted: #7B7B7B;       /* Muted text */
+      --card: #F8F8F8;        /* Card background */
+      --glass: rgba(34, 34, 34, 0.04); /* Subtle overlay */
+      --radius: 12px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+      font-size: 16px;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px
+    }
+
+    /* NAVBAR */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(6px);
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.2px
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center
+    }
+
+    .nav-links a {
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: var(--secondary)
+    }
+
+    .nav-links a:hover {
+      background: var(--glass);
+      color: var(--primary)
+    }
+
+    /* Mobile nav */
+    .menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(34, 34, 34, 0.1);
+      padding: 8px;
+      border-radius: 8px
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 40px;
+      align-items: center;
+      padding: 48px 0
+    }
+
+    .hero-left {
+      max-width: 760px
+    }
+
+    .eyebrow {
+      color: var(--secondary);
+      font-weight: 600
+    }
+
+    .name {
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 800;
+      margin: 8px 0
+    }
+
+    .role {
+      color: var(--muted);
+      margin-bottom: 18px
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 12px;
+      align-items: center
+    }
+
+    .btn {
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer
+    }
+
+    .ghost {
+      border: 1px solid var(--secondary);
+      background: transparent;
+      color: var(--secondary);
+      padding: 10px 14px;
+      border-radius: 10px
+    }
+
+    .ghost:hover {
+      background: var(--glass);
+      color: var(--primary);
+    }
+
+    .socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px
+    }
+
+    .socials a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: var(--card);
+      color: var(--primary);
+    }
+
+    /* Profile image */
+    .profile-card {
+      display: flex;
+      justify-content: center
+    }
+
+    .avatar {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 6px solid rgba(34, 34, 34, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), transparent);
+      box-shadow: 0 10px 30px rgba(34, 34, 34, 0.2);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 48px 0;
+      border-top: 1px solid rgba(34, 34, 34, 0.08)
+    }
+
+    h2 {
+      font-size: 20px;
+      color: var(--primary);
+      margin: 0 0 18px 0
+    }
+
+    p.lead {
+      color: var(--muted)
+    }
+
+    /* About */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center
+    }
+
+    .about .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: var(--radius)
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px
+    }
+
+    .skill {
+      background: var(--card);
+      padding: 18px;
+      border-radius: 12px;
+      min-height: 96px
+    }
+
+    .skill h3 {
+      margin: 0 0 8px 0
+    }
+
+    .skill p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px
+    }
+
+    /* Portfolio */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px
+    }
+
+    .project {
+      padding: 18px;
+      border-radius: 12px;
+      background: var(--card);
+      min-height: 140px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 24px
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px
+    }
+
+    input,
+    textarea {
+      background: transparent;
+      border: 1px solid rgba(34, 34, 34, 0.2);
+      color: var(--text);
+      padding: 12px;
+      border-radius: 10px
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: var(--secondary)
+    }
+
+    /* Footer */
+    footer {
+      padding: 28px 0;
+      text-align: center;
+      color: var(--secondary);
+      font-size: 14px
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center
+      }
+
+      .profile-card {
+        margin-top: 20px
+      }
+
+      .about {
+        grid-template-columns: 1fr
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr
+      }
+
+      .nav-links {
+        display: none
+      }
+
+      .menu-btn {
+        display: inline-flex
+      }
+    }
+
+    /* small tweaks */
+    .muted {
+      color: var(--muted)
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="nav">
+      <div class="logo">Shubham Miskin</div>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero" id="home">
+      <div class="hero-left">
+        <div class="eyebrow">Hello 👋 I'm</div>
+        <h1 class="name">Shubham Miskin</h1>
+        <div class="role">Aspiring Data Engineer — AI & Data Science student</div>
+        <p class="lead">Pursuing B.Tech — Shivaji University, Kolhapur. Skilled in Python (Pandas & NumPy), SQL, ETL
+          processes, and web scraping. Passionate about problem-solving and actively seeking internships in data
+          engineering.</p>
+
+        <div class="cta-group">
+          <a href="CV.pdf" class="btn">Download Resume</a>
+        </div>
+
+        <div class="socials">
+          <a href="https://github.com/Shubham-miskin" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/shubham-miskin-9b9a3a330?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            aria-label="LinkedIn">LinkedIn</a>
+
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="avatar">
+          <!-- Replace the src with your profile image path -->
+          <img
+            src="https://media.licdn.com/dms/image/v2/D4E03AQHHmj24sDyVow/profile-displayphoto-scale_400_400/B4EZicvQhYHIAk-/0/1754976293794?e=1760572800&v=beta&t=4UsHITTgpH_IV5K25kky7aw0vvjpSFcc7UIYOxad250"
+            alt="Shubham Miskin">
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <h2>About</h2>
+        <div class="about">
+          <div class="card">
+            <p class="lead">I'm Shubham Laxmikant Miskin, a BTech student specializing in Artificial Intelligence and
+              Data Science at Shivaji University, Kolhapur. I'm currently building my
+              expertise in the fascinating world of data engineering.<br><br>
+
+              My technical foundation includes proficiency in Python with libraries like Pandas & NumPy, SQL for database
+              management, ETL processes for data transformation, and Web Scraping for data collection.<br><br>
+
+              What drives me is the endless potential of data to solve real-world problems. I'm passionate about
+              problem-solving, continuous learning, and working on data-driven projects that make a meaningful impact.
+              Currently, I'm actively seeking internship opportunities in data engineering to apply my skills and grow
+              professionally.</p>
+          </div>
+
+          <div>
+            <ul style="list-style:none; padding:0; margin:0; display:grid; gap:10px">
+              <li><strong>Education:</strong> B.Tech - Artificial Intelligence and Data Science, Shivaji University, Kolhapur</li>
+              <li><strong>Status:</strong> Fresher / Internship seeker</li>
+              <li><strong>Location:</strong> Kolhapur, India</li>
+              <li><strong>Interested Roles:</strong> Data Engineer, ETL Developer, Web Scraping</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill">
+            <h3>Python</h3>
+            <p class="muted">Pandas, NumPy — data manipulation, cleaning, and analysis.</p>
+          </div>
+
+          <div class="skill">
+            <h3>SQL</h3>
+            <p class="muted">Relational queries, joins, aggregations, and optimization basics.</p>
+          </div>
+
+          <div class="skill">
+            <h3>ETL Pipelines</h3>
+            <p class="muted">An ETL pipeline automates the journey of data from raw → processed → analytics-ready, ensuring it is consistent, accurate, and accessible for decision-making.</p>
+          </div>
+
+          <div class="skill">
+            <h3>Web Scraping</h3>
+            <p class="muted">Web scraping is a data collection technique that pulls structured information from websites, often used in analytics, automation, and business intelligence. Extraction with requests/BeautifulSoup.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+      <div class="container">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+          <div class="project">
+            <div>
+              <h3>AI-based internship recommendation engine</h3>
+              <p class="muted">The AI-based Internship Recommendation Engine is a smart platform designed to connect students and job seekers with the most suitable internship opportunities based on their skills, education, interests, and career goals. Leveraging machine learning and intelligent algorithms, the system analyzes user profiles and internship listings to provide personalized recommendations, ensuring a high match between candidate capabilities and industry requirements.</p>
+            </div>
+            <div class="muted">Work In Progress • Stay tuned</div>
+          </div>
+
+          <!-- Example placeholder for future projects -->
+          <div class="project">
+            <div>
+              <h3>ETL Pipelines</h3>
+              <p class="muted">Currently working on data engineering projects. Updates will be posted here when
+                completed.</p>
+            </div>
+            <div class="muted">Work In Progress • Stay tuned</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="contact-grid">
+          <div>
+            <p class="lead">Prefer email or GitHub link for collaboration and internship inquiries. Drop a message and I
+              will respond promptly.</p>
+
+            <ul style="list-style:none; padding:0; margin:18px 0 0 0; display:grid; gap:10px">
+              <li><strong>Email:</strong> <a href="#">shubhammikin93@gmail.com</a></li>
+              <li><strong>GitHub:</strong> <a href="https://github.com/Shubham-miskin">Shubham-miskin</a></li>
+              <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/shubham-miskin-9b9a3a330?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Shubham Miskin</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Shubham Laxmikant Miskin. All rights reserved.
+    </footer>
+  </div>
+<script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      if (navLinks.style.display === 'flex') navLinks.style.display = 'none';
+      else navLinks.style.display = 'flex';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.position = 'absolute';
+      navLinks.style.right = '32px';
+      navLinks.style.top = '64px';
+      navLinks.style.background = 'rgba(255,255,255,0.02)';
+      navLinks.style.padding = '12px';
+      navLinks.style.borderRadius = '10px';
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href.length > 1) {
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
