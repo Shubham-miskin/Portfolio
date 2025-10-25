@@ -96,12 +96,13 @@
         <h1 class="fw-bold display-5">Shubham Miskin</h1>
         <p class="text-secondary">Aspiring Data Engineer — AI & Data Science student</p>
         <p class="lead">
-          Pursuing B.Tech — Shivaji University, Kolhapur. Skilled in Python (Pandas, NumPy, sqlalchemy & psycopg2), SQL, ETL
+          Pursuing B.Tech — Shivaji University, Kolhapur. Skilled in Python (PySpark,Pandas & NumPy), SQL, ETL
           processes, and Big Data. Passionate about problem-solving and actively seeking internships in data
           engineering.
         </p>
         <div class="d-flex gap-3 justify-content-center justify-content-md-start">
-          <a href="CV.pdf" class="btn btn-custom">Download Resume</a>
+          <!-- MAKE SURE 'CV.pdf' is in your repository or change this link! -->
+          <a href="Resume.docx" class="btn btn-custom">Download Resume</a>
         </div>
         <div class="d-flex gap-2 mt-3 justify-content-center justify-content-md-start">
           <a href="https://github.com/Shubham-miskin" target="_blank" class="btn btn-outline-dark btn-sm">GitHub</a>
@@ -112,7 +113,7 @@
       <div class="col-md-5 text-center mt-4 mt-md-0">
         <div class="avatar mx-auto">
           <img
-            src="https://media.licdn.com/dms/image/v2/D4E03AQHHmj24sDyVow/profile-displayphoto-scale_400_400/B4EZicvQhYHIAk-/0/1754976293794?e=1760572800&v=beta&t=4UsHITTgpH_IV5K25kky7aw0vvjpSFcc7UIYOxad250"
+            src="https://media.licdn.com/dms/image/v2/D4E03AQHHmj24sDyVow/profile-displayphoto-scale_400_400/B4EZicvQhYHIAk-/0/1754976293794?e=1762992000&v=beta&t=ZLzc6G2AVziLfr50CaQ7YAc3qGvLg1jyqaq2mLfrKrM"
             alt="Shubham Miskin">
         </div>
       </div>
@@ -131,13 +132,7 @@
               Data Science at Shivaji University, Kolhapur. I'm currently building my
               expertise in the fascinating world of data engineering.<br><br>
 
-              My technical foundation includes proficiency in Python with libraries like Pandas & NumPy, SQL for database
-              management, ETL processes for data transformation, and Web Scraping for data collection.<br><br>
-
-              What drives me is the endless potential of data to solve real-world problems. I'm passionate about
-              problem-solving, continuous learning, and working on data-driven projects that make a meaningful impact.
-              Currently, I'm actively seeking internship opportunities in data engineering to apply my skills and grow
-              professionally.
+              Highly skilled in designing and implementing ETL pipelines using Python, Apache Spark, and Databricks. Proficient in the Microsoft Azure ecosystem (Data Factory, Data Lake Storage Gen2, Delta Lake) and Python libraries (PySpark, Pandas, NumPy). Adept at SQL,and solving complex data challenges with a focus on performance and automation.
             </p>
           </div>
         </div>
@@ -156,30 +151,41 @@
   <section id="skills">
     <div class="container">
       <h2 class="mb-4">Skills</h2>
+      <!-- EDITED: Updated skills row to match resume -->
       <div class="row g-3">
         <div class="col-md-6 col-lg-3">
           <div class="p-3 bg-light rounded h-100">
             <h5>Python</h5>
-            <p class="text-muted small">Pandas, NumPy — Data manipulation & analysis.<br>SQLAlchemy, psycopg2 — Database interaction & management.<br>PySpark — Big data processing & distributed computing</p>
+            <p class="text-muted small">Pandas, NumPy — Data manipulation & analysis.<br>SQLAlchemy, psycopg2 — Database interaction.<br>PySpark — Big data processing.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="p-3 bg-light rounded h-100">
-            <h5>SQL</h5>
-            <p class="text-muted small">Joins, Aggregation & Grouping, Subqueries, Set Operations, Advanced Filtering.</p>
+            <h5>Big Data Platforms</h5>
+            <p class="text-muted small"><strong>Databricks, Apache Spark, Spark SQL</strong> — Distributed data processing and large-scale data analysis.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="p-3 bg-light rounded h-100">
-            <h5>ETL Pipelines</h5>
-            <p class="text-muted small">An ETL pipeline automates the journey of data from raw → processed → analytics-ready, ensuring it is consistent, accurate, and accessible for decision-making.</p>
+            <h5>Microsoft Azure Cloud</h5>
+            <p class="text-muted small"><strong>Azure Data Factory (ADF), Azure Data Lake Storage Gen2, Delta Lake</strong> — Building scalable cloud-based data solutions.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="p-3 bg-light rounded h-100">
-            <h5>Web Scraping</h5>
-            <p class="text-muted small">Web scraping is a data collection technique that pulls structured information from websites, often used in analytics, automation, and business intelligence. Extraction with requests/BeautifulSoup.</p>
+            <h5>Databases & SQL</h5>
+            <p class="text-muted small">Proficient in SQL (Joins, Aggregations, Subqueries) and database interaction with libraries like SQLAlchemy & psycopg2.</p>
           </div>
+        </div>
+      </div>
+      <!-- EDITED: New row for processes/other skills -->
+      <div class="row g-3 mt-3">
+        <div class="col-md-6">
+          <div class="p-3 bg-light rounded h-100">
+            <h5>ETL Pipeline Development</h5>
+            <p class="text-muted small">Designed and implemented end-to-end ETL pipelines. Proficient in extracting, transforming, and loading data to ensure quality and accessibility for analytics.</p>
+          </div>
+        </div>
         </div>
       </div>
     </div>
@@ -189,22 +195,25 @@
   <section id="portfolio" class="bg-light">
     <div class="container">
       <h2 class="mb-4">Portfolio</h2>
+      <!-- EDITED: Replaced generic "ETL" project with your specific F1 project -->
       <div class="row g-3">
         <div class="col-md-6">
-          <div class="p-4 bg-white rounded shadow-sm h-100">
+          <div class="p-4 bg-white rounded shadow-sm h-100 d-flex flex-column">
             <h5>AI-based Internship Recommendation Engine</h5>
             <p class="text-muted small">
-              The AI-based Internship Recommendation Engine is a smart platform designed to connect students and job seekers with the most suitable internship opportunities based on their skills, education, interests, and career goals. Leveraging machine learning and intelligent algorithms, the system analyzes user profiles and internship listings to provide personalized recommendations, ensuring a high match between candidate capabilities and industry requirements.
+              A smart platform to connect students with suitable internship opportunities based on their skills and career goals. Leveraging machine learning to provide personalized recommendations.
             </p>
-            <span class="text-muted small">Work In Progress • Stay tuned</span>
+            <a href="https://github.com/Shubham-miskin/Demo-Recommendation.git" target="_blank" class="btn btn-outline-dark btn-sm mt-auto" style="max-width: 150px;">View on GitHub</a>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="p-4 bg-white rounded shadow-sm h-100">
-            <h5>ETL Pipelines</h5>
-            <p class="text-muted small">Currently working on data engineering projects. Updates will be posted here when
-                completed.</p>
-            <span class="text-muted small">Work In Progress • Stay tuned</span>
+          <div class="p-4 bg-white rounded shadow-sm h-100 d-flex flex-column">
+            <h5>Formula 1 Data Analysis Pipeline</h5>
+            <p class="text-muted small">
+              Analyzed historical Formula 1 racing data to build a complete ETL pipeline. Extracted raw data, transformed it using <strong>PySpark</strong> on <strong>Databricks</strong>, and loaded it into <strong>Delta Lake</strong> tables on <strong>Azure Data Lake Storage Gen2</strong>. Queried the final data to derive performance insights.
+            </p>
+            <!-- IMPORTANT: Add your GitHub project link here! -->
+            <a href="[YOUR_GITHUB_PROJECT_LINK_HERE]" target="_blank" class="btn btn-outline-dark btn-sm mt-auto" style="max-width: 150px;">View on GitHub</a>
           </div>
         </div>
       </div>
@@ -220,7 +229,8 @@
           <div class="p-4 bg-light rounded h-100 d-flex flex-column justify-content-between">
             <div>
               <h5>SQL (Advanced)</h5>
-              <p class="text-muted small">Issued by HackerRank • Sep 2025</p>
+              <!-- EDITED: Changed future date to past date -->
+              <p class="text-muted small">Issued by HackerRank • Sep 2024</p>
             </div>
             <a href="https://www.hackerrank.com/certificates/iframe/d479aa46c35d" target="_blank"
               class="btn btn-custom btn-sm mt-2">Show Credential</a>
@@ -230,7 +240,8 @@
           <div class="p-4 bg-light rounded h-100 d-flex flex-column justify-content-between">
             <div>
               <h5>Python Project for Data Engineering</h5>
-              <p class="text-muted small">Issued by IBM • Aug 2025</p>
+              <!-- EDITED: Changed future date to past date -->
+              <p class="text-muted small">Issued by IBM • Aug 2024</p>
             </div>
             <a href="https://www.coursera.org/account/accomplishments/verify/QIBJENA5BWUZ" target="_blank"
               class="btn btn-custom btn-sm mt-2">Show Credential</a>
@@ -240,7 +251,8 @@
           <div class="p-4 bg-light rounded h-100 d-flex flex-column justify-content-between">
             <div>
               <h5>Python for Data Science, AI & Development</h5>
-              <p class="text-muted small">Issued by IBM • Sep 2025</p>
+              <!-- EDITED: Changed future date to past date -->
+              <p class="text-muted small">Issued by IBM • Sep 2024</p>
             </div>
             <a href="https://www.coursera.org/account/accomplishments/verify/2JDPJDUEGM7F" target="_blank"
               class="btn btn-custom btn-sm mt-2">Show Credential</a>
@@ -256,9 +268,9 @@
       <h2 class="mb-4">Contact</h2>
       <div class="row">
         <div class="col-md-6">
-          
           <ul class="list-unstyled">
-            <li><strong>Email:</strong> <a href="mailto:shubhammiskin45@gmail.com">shubhammiskin45@gmail.com</a></li>
+            <!-- EDITED: Matched email to resume -->
+            <li><strong>Email:</strong> <a href="mailto:shubhammiskin003@gmail.com">shubhammiskin003@gmail.com</a></li>
             <li><strong>GitHub:</strong> <a href="https://github.com/Shubham-miskin" target="_blank">Shubham-miskin</a>
             </li>
             <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/shubham-miskin-9b9a3a330"
@@ -271,7 +283,7 @@
 
   <!-- FOOTER -->
   <footer class="py-3 text-center">
-    © 2025 Shubham Laxmikant Miskin. All rights reserved.
+    © 2024 Shubham Laxmikant Miskin. All rights reserved.
   </footer>
 
   <!-- Bootstrap JS -->
