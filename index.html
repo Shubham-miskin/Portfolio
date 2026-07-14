@@ -615,10 +615,12 @@
     }
 
     .hero-avatar-inner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transform: scale(1); /* Zoom in */
+}
 
     /* Avatar placeholder (gradient) */
     .avatar-placeholder {
@@ -1575,7 +1577,7 @@ Proficient in the Azure ecosystem (Data Factory, Synapse, Databricks) and Medall
         <div class="hero-avatar-wrap" data-aos="fade-left" data-aos-delay="200">
           <div class="hero-avatar-ring">
             <div class="hero-avatar-inner">
-              <img src="photo.jpg" alt="Shubham Miskin"
+              <img src="photo.png" alt="Shubham Miskin"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
               <div class="avatar-placeholder" style="display:none;">SM</div>
             </div>
